@@ -4,6 +4,13 @@
    <FileRef
       location = "group:iOS-AppArchitecture.xcodeproj">
    </FileRef>
+   <Group
+      location = "container:"
+      name = "Libraries">
+      <FileRef
+         location = "group:Libraries/Network/Network.xcodeproj">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
