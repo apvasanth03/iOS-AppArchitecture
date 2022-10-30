@@ -38,9 +38,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Private Methods.
     fileprivate func initializeDI()-> Assembler{
+        // Libraries
         let networkAssembly = NetworkAssembly()
         
-        let assembler = Assembler([networkAssembly])
+        // App
+        let appAssembly = AppAssembly()
+        
+        let assembler = Assembler([networkAssembly, appAssembly])
         return assembler
     }
     

@@ -32,3 +32,10 @@ target 'Network' do
   alamofire
   swinject
 end
+
+# CommonCore
+target 'CommonCore' do
+  project 'Libraries/CommonCore/CommonCore.xcodeproj'
+  
+  swinject
+end

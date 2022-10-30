@@ -1,23 +1,18 @@
 import Foundation
 import Swinject
 import Alamofire
+import CommonCore
 
-struct HttpModule{
+struct HttpModule: Module{
     
-    let container: Container
-    
-    init(container: Container){
-        self.container = container
-    }
-    
-    func registerServices(){
-        registerJSONDecoder()
-        registerSession()
-        registerHttpClient()
+    static func registerServices(container: Container) {
+        registerJSONDecoder(container)
+        registerSession(container)
+        registerHttpClient(container)
     }
     
     // JSONDecoder
-    private func registerJSONDecoder(){
+    private static func registerJSONDecoder(_ container: Container){
         container.register(JSONDecoder.self){ _ in
             let jsonDecoder = JSONDecoder()
             jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -26,7 +21,7 @@ struct HttpModule{
     }
     
     // Session
-    private func registerSession(){
+    private static func registerSession(_ container: Container){
         container.register(Session.self){ _ in
             let configuration = URLSessionConfiguration.default
             configuration.urlCache = nil
@@ -36,7 +31,7 @@ struct HttpModule{
     }
     
     // HttpClient
-    private func registerHttpClient(){
+    private static func registerHttpClient(_ container: Container){
         container.register(HttpClient.self){ r in
             let session = r.resolve(Session.self)!
             let decoder = r.resolve(JSONDecoder.self)!

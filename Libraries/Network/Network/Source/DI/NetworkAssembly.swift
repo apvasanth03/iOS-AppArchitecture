@@ -10,6 +10,6 @@ public class NetworkAssembly: Assembly{
     }
     
     public func assemble(container: Container) {
-        HttpModule(container: container).registerServices()
+        HttpModule.registerServices(container: container)
     }
 }
