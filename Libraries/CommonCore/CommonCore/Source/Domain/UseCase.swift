@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-/// Executes business logic asynchronously.
+/// UseCase - Executes business logic asynchronously.
 public protocol UseCase{
     
     associatedtype Input
@@ -15,25 +15,19 @@ public protocol UseCase{
     /// - Parameters:
     ///     - input - Input for the `UseCase`
     ///
-    /// - Returns: The `Result`
+    /// - Returns: The `Publisher`
     ///
-    func execute(input: Input) -> AnyPublisher<Result<Success, Failure>, Never>
+    func execute(input: Input) -> AnyPublisher<Success, Failure>
     
 }
 
 extension UseCase{
     
-    public func executeUseCase(block: () -> AnyPublisher<Success, Failure>) -> AnyPublisher<Result<Success, Failure>, Never>{
+    public func executeUseCaseInBackground(block: () -> AnyPublisher<Success, Failure>) -> AnyPublisher<Success, Failure>{
         return block()
-            .map { output in
-                Result.success(output)
-            }
-            .catch({ error in
-                Just(Result.failure(error))
-            })
-                .subscribe(on: globalQueue)
-                .eraseToAnyPublisher()
-                    
+            .subscribe(on: globalQueue)
+            .eraseToAnyPublisher()
+        
     }
     
 }

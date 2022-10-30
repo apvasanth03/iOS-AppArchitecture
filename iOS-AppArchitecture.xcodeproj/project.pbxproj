@@ -26,6 +26,12 @@
 		1288773D290E68A100E22915 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288773C290E68A100E22915 /* AppAssembly.swift */; };
 		12887748290EA76A00E22915 /* GetUserListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887747290EA76A00E22915 /* GetUserListUseCase.swift */; };
 		1288774B290EAAD300E22915 /* DomainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288774A290EAAD300E22915 /* DomainModule.swift */; };
+		12887757290EB46800E22915 /* UserUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887756290EB46800E22915 /* UserUIModel.swift */; };
+		12887759290EB4BD00E22915 /* UserListUIMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887758290EB4BD00E22915 /* UserListUIMapper.swift */; };
+		1288775B290EB73200E22915 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288775A290EB73200E22915 /* UserListViewModel.swift */; };
+		1288775D290EB76400E22915 /* UserListUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288775C290EB76400E22915 /* UserListUIState.swift */; };
+		12887761290EC19400E22915 /* UserListUIAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887760290EC19400E22915 /* UserListUIAssembly.swift */; };
+		12887763290EC1B600E22915 /* UserListUIModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887762290EC1B600E22915 /* UserListUIModule.swift */; };
 		6AA3914F2F5D11FBE137C314 /* Pods_iOS_AppArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D9814601FC5F94302EA4E /* Pods_iOS_AppArchitecture.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +70,12 @@
 		1288773C290E68A100E22915 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		12887747290EA76A00E22915 /* GetUserListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserListUseCase.swift; sourceTree = "<group>"; };
 		1288774A290EAAD300E22915 /* DomainModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainModule.swift; sourceTree = "<group>"; };
+		12887756290EB46800E22915 /* UserUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUIModel.swift; sourceTree = "<group>"; };
+		12887758290EB4BD00E22915 /* UserListUIMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListUIMapper.swift; sourceTree = "<group>"; };
+		1288775A290EB73200E22915 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		1288775C290EB76400E22915 /* UserListUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListUIState.swift; sourceTree = "<group>"; };
+		12887760290EC19400E22915 /* UserListUIAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListUIAssembly.swift; sourceTree = "<group>"; };
+		12887762290EC1B600E22915 /* UserListUIModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListUIModule.swift; sourceTree = "<group>"; };
 		692D9814601FC5F94302EA4E /* Pods_iOS_AppArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_AppArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9050566548BD0AD4D6062405 /* Pods-iOS-AppArchitecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-AppArchitecture.debug.xcconfig"; path = "Target Support Files/Pods-iOS-AppArchitecture/Pods-iOS-AppArchitecture.debug.xcconfig"; sourceTree = "<group>"; };
 		FF041887D3287182DF960DF8 /* Pods-iOS-AppArchitecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-AppArchitecture.release.xcconfig"; path = "Target Support Files/Pods-iOS-AppArchitecture/Pods-iOS-AppArchitecture.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +163,7 @@
 		128876F4290E49B200E22915 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1288775E290EC13A00E22915 /* UserList */,
 				128876F5290E49BB00E22915 /* View */,
 			);
 			path = UI;
@@ -257,6 +270,51 @@
 			isa = PBXGroup;
 			children = (
 				1288774A290EAAD300E22915 /* DomainModule.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		12887752290EB1D400E22915 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				12887754290EB1E200E22915 /* Mapper */,
+				12887755290EB44D00E22915 /* Model */,
+				1288775A290EB73200E22915 /* UserListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		12887754290EB1E200E22915 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				12887758290EB4BD00E22915 /* UserListUIMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		12887755290EB44D00E22915 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12887756290EB46800E22915 /* UserUIModel.swift */,
+				1288775C290EB76400E22915 /* UserListUIState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1288775E290EC13A00E22915 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				1288775F290EC16B00E22915 /* DI */,
+				12887752290EB1D400E22915 /* ViewModel */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		1288775F290EC16B00E22915 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				12887760290EC19400E22915 /* UserListUIAssembly.swift */,
+				12887762290EC1B600E22915 /* UserListUIModule.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -391,12 +449,18 @@
 				12887725290E5EBB00E22915 /* User.swift in Sources */,
 				128876BC290E1ACA00E22915 /* ViewController.swift in Sources */,
 				1288774B290EAAD300E22915 /* DomainModule.swift in Sources */,
+				12887761290EC19400E22915 /* UserListUIAssembly.swift in Sources */,
+				1288775B290EB73200E22915 /* UserListViewModel.swift in Sources */,
+				12887763290EC1B600E22915 /* UserListUIModule.swift in Sources */,
+				12887757290EB46800E22915 /* UserUIModel.swift in Sources */,
 				12887748290EA76A00E22915 /* GetUserListUseCase.swift in Sources */,
 				12887728290E5ECD00E22915 /* UserRemoteDataSource.swift in Sources */,
 				128876B8290E1ACA00E22915 /* AppDelegate.swift in Sources */,
 				12887733290E63FB00E22915 /* DataModule.swift in Sources */,
+				1288775D290EB76400E22915 /* UserListUIState.swift in Sources */,
 				128876BA290E1ACA00E22915 /* SceneDelegate.swift in Sources */,
 				1288773D290E68A100E22915 /* AppAssembly.swift in Sources */,
+				12887759290EB4BD00E22915 /* UserListUIMapper.swift in Sources */,
 				12887730290E622100E22915 /* UserRepository.swift in Sources */,
 				1288772D290E612F00E22915 /* UserLocalDataSource.swift in Sources */,
 			);

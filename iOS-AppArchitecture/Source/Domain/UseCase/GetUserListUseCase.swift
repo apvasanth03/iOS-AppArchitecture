@@ -19,8 +19,8 @@ class GetUserListUseCase: UseCase{
     }
     
     // MARK: - UseCase Method
-    func execute(input: Void) -> AnyPublisher<Result<UserListResponse, HttpError>, Never> {
-        return executeUseCase{
+    func execute(input: Void) -> AnyPublisher<UserListResponse, HttpError> {
+        return executeUseCaseInBackground{
             userRepository.getUsers()
         }
     }

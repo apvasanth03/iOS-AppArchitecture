@@ -14,6 +14,8 @@
 		12887740290E9AFA00E22915 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288773F290E9AFA00E22915 /* UseCase.swift */; };
 		12887744290EA4FF00E22915 /* DispatchQueueModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887743290EA4FF00E22915 /* DispatchQueueModule.swift */; };
 		12887746290EA6B600E22915 /* CommonCoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887745290EA6B600E22915 /* CommonCoreAssembly.swift */; };
+		1288774E290EAF0D00E22915 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288774D290EAF0D00E22915 /* ViewModel.swift */; };
+		12887751290EAFDE00E22915 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887750290EAFDE00E22915 /* Mapper.swift */; };
 		AD2CBC1B5F1C8150F3715ABD /* Pods_CommonCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67CBAD83753EF1F1B2A0E12C /* Pods_CommonCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		1288773F290E9AFA00E22915 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		12887743290EA4FF00E22915 /* DispatchQueueModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueModule.swift; sourceTree = "<group>"; };
 		12887745290EA6B600E22915 /* CommonCoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCoreAssembly.swift; sourceTree = "<group>"; };
+		1288774D290EAF0D00E22915 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		12887750290EAFDE00E22915 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		67CBAD83753EF1F1B2A0E12C /* Pods_CommonCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommonCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A4222BFC773B51DC6DF18E /* Pods-CommonCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonCore.debug.xcconfig"; path = "Target Support Files/Pods-CommonCore/Pods-CommonCore.debug.xcconfig"; sourceTree = "<group>"; };
 		F79829F8E93565556CF6C483 /* Pods-CommonCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonCore.release.xcconfig"; path = "Target Support Files/Pods-CommonCore/Pods-CommonCore.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				12887716290E53D500E22915 /* Data */,
 				12887734290E648000E22915 /* DI */,
 				1288773E290E9ADC00E22915 /* Domain */,
+				1288774F290EAFC900E22915 /* Mapper */,
+				1288774C290EAEF000E22915 /* ViewModel */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -105,6 +111,22 @@
 				1288773F290E9AFA00E22915 /* UseCase.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		1288774C290EAEF000E22915 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1288774D290EAF0D00E22915 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1288774F290EAFC900E22915 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				12887750290EAFDE00E22915 /* Mapper.swift */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 		9AEE81BB23B1779B1F9744CF /* Frameworks */ = {
@@ -234,8 +256,10 @@
 				12887740290E9AFA00E22915 /* UseCase.swift in Sources */,
 				12887744290EA4FF00E22915 /* DispatchQueueModule.swift in Sources */,
 				12887721290E5E5800E22915 /* LocalDataSource.swift in Sources */,
+				12887751290EAFDE00E22915 /* Mapper.swift in Sources */,
 				12887736290E648D00E22915 /* Module.swift in Sources */,
 				12887718290E549000E22915 /* RemoteDataSource.swift in Sources */,
+				1288774E290EAF0D00E22915 /* ViewModel.swift in Sources */,
 				1288771B290E572A00E22915 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

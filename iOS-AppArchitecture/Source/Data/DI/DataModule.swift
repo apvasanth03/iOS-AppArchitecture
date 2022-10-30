@@ -1,10 +1,3 @@
-//
-//  DataModule.swift
-//  iOS-AppArchitecture
-//
-//  Created by Vasanthakumar Annadurai on 30/10/22.
-//
-
 import Foundation
 import CommonCore
 import Swinject
