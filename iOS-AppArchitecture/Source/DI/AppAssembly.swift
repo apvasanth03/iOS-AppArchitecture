@@ -5,5 +5,6 @@ class AppAssembly: Assembly{
     
     func assemble(container: Container) {
         DataModule.registerServices(container: container)
+        DomainModule.registerServices(container: container)
     }
 }

@@ -24,6 +24,8 @@
 		12887730290E622100E22915 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288772F290E622000E22915 /* UserRepository.swift */; };
 		12887733290E63FB00E22915 /* DataModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887732290E63FB00E22915 /* DataModule.swift */; };
 		1288773D290E68A100E22915 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288773C290E68A100E22915 /* AppAssembly.swift */; };
+		12887748290EA76A00E22915 /* GetUserListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887747290EA76A00E22915 /* GetUserListUseCase.swift */; };
+		1288774B290EAAD300E22915 /* DomainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288774A290EAAD300E22915 /* DomainModule.swift */; };
 		6AA3914F2F5D11FBE137C314 /* Pods_iOS_AppArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D9814601FC5F94302EA4E /* Pods_iOS_AppArchitecture.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		1288772F290E622000E22915 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		12887732290E63FB00E22915 /* DataModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModule.swift; sourceTree = "<group>"; };
 		1288773C290E68A100E22915 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
+		12887747290EA76A00E22915 /* GetUserListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserListUseCase.swift; sourceTree = "<group>"; };
+		1288774A290EAAD300E22915 /* DomainModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainModule.swift; sourceTree = "<group>"; };
 		692D9814601FC5F94302EA4E /* Pods_iOS_AppArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_AppArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9050566548BD0AD4D6062405 /* Pods-iOS-AppArchitecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-AppArchitecture.debug.xcconfig"; path = "Target Support Files/Pods-iOS-AppArchitecture/Pods-iOS-AppArchitecture.debug.xcconfig"; sourceTree = "<group>"; };
 		FF041887D3287182DF960DF8 /* Pods-iOS-AppArchitecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-AppArchitecture.release.xcconfig"; path = "Target Support Files/Pods-iOS-AppArchitecture/Pods-iOS-AppArchitecture.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				128876F2290E487A00E22915 /* App */,
 				1288771C290E5E0E00E22915 /* Data */,
 				1288773B290E688D00E22915 /* DI */,
+				12887741290EA36D00E22915 /* Domain */,
 				128876F4290E49B200E22915 /* UI */,
 			);
 			path = Source;
@@ -227,6 +232,31 @@
 			isa = PBXGroup;
 			children = (
 				1288773C290E68A100E22915 /* AppAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		12887741290EA36D00E22915 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				12887749290EAAC500E22915 /* DI */,
+				12887742290EA37A00E22915 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		12887742290EA37A00E22915 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				12887747290EA76A00E22915 /* GetUserListUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		12887749290EAAC500E22915 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				1288774A290EAAD300E22915 /* DomainModule.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -360,6 +390,8 @@
 				12887726290E5EBB00E22915 /* UserListResponse.swift in Sources */,
 				12887725290E5EBB00E22915 /* User.swift in Sources */,
 				128876BC290E1ACA00E22915 /* ViewController.swift in Sources */,
+				1288774B290EAAD300E22915 /* DomainModule.swift in Sources */,
+				12887748290EA76A00E22915 /* GetUserListUseCase.swift in Sources */,
 				12887728290E5ECD00E22915 /* UserRemoteDataSource.swift in Sources */,
 				128876B8290E1ACA00E22915 /* AppDelegate.swift in Sources */,
 				12887733290E63FB00E22915 /* DataModule.swift in Sources */,

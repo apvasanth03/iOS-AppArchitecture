@@ -8,6 +8,7 @@
 import UIKit
 import Swinject
 import Network
+import CommonCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -39,12 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Private Methods.
     fileprivate func initializeDI()-> Assembler{
         // Libraries
+        let commonCoreAssembly = CommonCoreAssembly()
         let networkAssembly = NetworkAssembly()
         
         // App
         let appAssembly = AppAssembly()
         
-        let assembler = Assembler([networkAssembly, appAssembly])
+        let assembler = Assembler([commonCoreAssembly, networkAssembly, appAssembly])
         return assembler
     }
     
