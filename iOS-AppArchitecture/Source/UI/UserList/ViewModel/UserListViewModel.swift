@@ -5,7 +5,7 @@ import Network
 
 class UserListViewModel: ViewModel{
     
-    // MARK: - Variable Declaration
+    // MARK: - Properties
     var uiState: AnyPublisher<UserListUIState, Never>{
         get{
             return _uiState.eraseToAnyPublisher()

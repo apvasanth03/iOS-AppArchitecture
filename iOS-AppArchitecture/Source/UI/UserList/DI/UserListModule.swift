@@ -3,7 +3,7 @@ import CommonCore
 import Swinject
 import Network
 
-struct UserListUIModule: Module{
+struct UserListModule: Module{
     
     static func registerServices(container: Container) {
         registerUserListUIMapper(container)

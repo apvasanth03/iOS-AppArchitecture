@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1281F626290F5E0B0065C78F /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281F624290F5E0B0065C78F /* UserTableViewCell.swift */; };
+		1281F627290F5E0B0065C78F /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1281F625290F5E0B0065C78F /* UserTableViewCell.xib */; };
+		1281F62A290F69950065C78F /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1281F629290F69950065C78F /* ErrorView.xib */; };
+		1281F632290F6CAC0065C78F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281F631290F6CAC0065C78F /* ErrorView.swift */; };
 		128876B8290E1ACA00E22915 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128876B7290E1ACA00E22915 /* AppDelegate.swift */; };
 		128876BA290E1ACA00E22915 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128876B9290E1ACA00E22915 /* SceneDelegate.swift */; };
-		128876BC290E1ACA00E22915 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128876BB290E1ACA00E22915 /* ViewController.swift */; };
+		128876BC290E1ACA00E22915 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128876BB290E1ACA00E22915 /* UserListViewController.swift */; };
 		128876BF290E1ACA00E22915 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128876BD290E1ACA00E22915 /* Main.storyboard */; };
 		128876C1290E1ACB00E22915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128876C0290E1ACB00E22915 /* Assets.xcassets */; };
 		128876C4290E1ACB00E22915 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128876C2290E1ACB00E22915 /* LaunchScreen.storyboard */; };
@@ -30,8 +34,8 @@
 		12887759290EB4BD00E22915 /* UserListUIMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887758290EB4BD00E22915 /* UserListUIMapper.swift */; };
 		1288775B290EB73200E22915 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288775A290EB73200E22915 /* UserListViewModel.swift */; };
 		1288775D290EB76400E22915 /* UserListUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1288775C290EB76400E22915 /* UserListUIState.swift */; };
-		12887761290EC19400E22915 /* UserListUIAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887760290EC19400E22915 /* UserListUIAssembly.swift */; };
-		12887763290EC1B600E22915 /* UserListUIModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887762290EC1B600E22915 /* UserListUIModule.swift */; };
+		12887761290EC19400E22915 /* UserListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887760290EC19400E22915 /* UserListAssembly.swift */; };
+		12887763290EC1B600E22915 /* UserListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12887762290EC1B600E22915 /* UserListModule.swift */; };
 		6AA3914F2F5D11FBE137C314 /* Pods_iOS_AppArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692D9814601FC5F94302EA4E /* Pods_iOS_AppArchitecture.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,10 +55,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1281F624290F5E0B0065C78F /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		1281F625290F5E0B0065C78F /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		1281F629290F69950065C78F /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		1281F631290F6CAC0065C78F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		128876B4290E1ACA00E22915 /* iOS-AppArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-AppArchitecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		128876B7290E1ACA00E22915 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		128876B9290E1ACA00E22915 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		128876BB290E1ACA00E22915 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		128876BB290E1ACA00E22915 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		128876BE290E1ACA00E22915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		128876C0290E1ACB00E22915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		128876C3290E1ACB00E22915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,8 +82,8 @@
 		12887758290EB4BD00E22915 /* UserListUIMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListUIMapper.swift; sourceTree = "<group>"; };
 		1288775A290EB73200E22915 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		1288775C290EB76400E22915 /* UserListUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListUIState.swift; sourceTree = "<group>"; };
-		12887760290EC19400E22915 /* UserListUIAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListUIAssembly.swift; sourceTree = "<group>"; };
-		12887762290EC1B600E22915 /* UserListUIModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListUIModule.swift; sourceTree = "<group>"; };
+		12887760290EC19400E22915 /* UserListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListAssembly.swift; sourceTree = "<group>"; };
+		12887762290EC1B600E22915 /* UserListModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListModule.swift; sourceTree = "<group>"; };
 		692D9814601FC5F94302EA4E /* Pods_iOS_AppArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_AppArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9050566548BD0AD4D6062405 /* Pods-iOS-AppArchitecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-AppArchitecture.debug.xcconfig"; path = "Target Support Files/Pods-iOS-AppArchitecture/Pods-iOS-AppArchitecture.debug.xcconfig"; sourceTree = "<group>"; };
 		FF041887D3287182DF960DF8 /* Pods-iOS-AppArchitecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-AppArchitecture.release.xcconfig"; path = "Target Support Files/Pods-iOS-AppArchitecture/Pods-iOS-AppArchitecture.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +110,59 @@
 				FF041887D3287182DF960DF8 /* Pods-iOS-AppArchitecture.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		1281F61F290F577D0065C78F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1281F621290F57920065C78F /* StoryBoard */,
+				1281F622290F5D480065C78F /* View */,
+				1281F620290F578B0065C78F /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1281F620290F578B0065C78F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				128876BB290E1ACA00E22915 /* UserListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1281F621290F57920065C78F /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				128876BD290E1ACA00E22915 /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		1281F622290F5D480065C78F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1281F628290F697B0065C78F /* Error */,
+				1281F623290F5D660065C78F /* UserCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1281F623290F5D660065C78F /* UserCell */ = {
+			isa = PBXGroup;
+			children = (
+				1281F624290F5E0B0065C78F /* UserTableViewCell.swift */,
+				1281F625290F5E0B0065C78F /* UserTableViewCell.xib */,
+			);
+			path = UserCell;
+			sourceTree = "<group>";
+		};
+		1281F628290F697B0065C78F /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				1281F629290F69950065C78F /* ErrorView.xib */,
+				1281F631290F6CAC0065C78F /* ErrorView.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		128876AB290E1ACA00E22915 = {
@@ -164,20 +225,18 @@
 			isa = PBXGroup;
 			children = (
 				1288775E290EC13A00E22915 /* UserList */,
-				128876F5290E49BB00E22915 /* View */,
+				128876F5290E49BB00E22915 /* Others */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		128876F5290E49BB00E22915 /* View */ = {
+		128876F5290E49BB00E22915 /* Others */ = {
 			isa = PBXGroup;
 			children = (
 				128876B9290E1ACA00E22915 /* SceneDelegate.swift */,
-				128876BB290E1ACA00E22915 /* ViewController.swift */,
-				128876BD290E1ACA00E22915 /* Main.storyboard */,
 				128876C2290E1ACB00E22915 /* LaunchScreen.storyboard */,
 			);
-			path = View;
+			path = Others;
 			sourceTree = "<group>";
 		};
 		1288771C290E5E0E00E22915 /* Data */ = {
@@ -304,6 +363,7 @@
 		1288775E290EC13A00E22915 /* UserList */ = {
 			isa = PBXGroup;
 			children = (
+				1281F61F290F577D0065C78F /* View */,
 				1288775F290EC16B00E22915 /* DI */,
 				12887752290EB1D400E22915 /* ViewModel */,
 			);
@@ -313,8 +373,8 @@
 		1288775F290EC16B00E22915 /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				12887760290EC19400E22915 /* UserListUIAssembly.swift */,
-				12887762290EC1B600E22915 /* UserListUIModule.swift */,
+				12887760290EC19400E22915 /* UserListAssembly.swift */,
+				12887762290EC1B600E22915 /* UserListModule.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -390,9 +450,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1281F627290F5E0B0065C78F /* UserTableViewCell.xib in Resources */,
 				128876C4290E1ACB00E22915 /* LaunchScreen.storyboard in Resources */,
 				128876C1290E1ACB00E22915 /* Assets.xcassets in Resources */,
 				128876BF290E1ACA00E22915 /* Main.storyboard in Resources */,
+				1281F62A290F69950065C78F /* ErrorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,18 +509,20 @@
 			files = (
 				12887726290E5EBB00E22915 /* UserListResponse.swift in Sources */,
 				12887725290E5EBB00E22915 /* User.swift in Sources */,
-				128876BC290E1ACA00E22915 /* ViewController.swift in Sources */,
+				128876BC290E1ACA00E22915 /* UserListViewController.swift in Sources */,
 				1288774B290EAAD300E22915 /* DomainModule.swift in Sources */,
-				12887761290EC19400E22915 /* UserListUIAssembly.swift in Sources */,
+				12887761290EC19400E22915 /* UserListAssembly.swift in Sources */,
 				1288775B290EB73200E22915 /* UserListViewModel.swift in Sources */,
-				12887763290EC1B600E22915 /* UserListUIModule.swift in Sources */,
+				12887763290EC1B600E22915 /* UserListModule.swift in Sources */,
 				12887757290EB46800E22915 /* UserUIModel.swift in Sources */,
 				12887748290EA76A00E22915 /* GetUserListUseCase.swift in Sources */,
 				12887728290E5ECD00E22915 /* UserRemoteDataSource.swift in Sources */,
 				128876B8290E1ACA00E22915 /* AppDelegate.swift in Sources */,
 				12887733290E63FB00E22915 /* DataModule.swift in Sources */,
+				1281F626290F5E0B0065C78F /* UserTableViewCell.swift in Sources */,
 				1288775D290EB76400E22915 /* UserListUIState.swift in Sources */,
 				128876BA290E1ACA00E22915 /* SceneDelegate.swift in Sources */,
+				1281F632290F6CAC0065C78F /* ErrorView.swift in Sources */,
 				1288773D290E68A100E22915 /* AppAssembly.swift in Sources */,
 				12887759290EB4BD00E22915 /* UserListUIMapper.swift in Sources */,
 				12887730290E622100E22915 /* UserRepository.swift in Sources */,
