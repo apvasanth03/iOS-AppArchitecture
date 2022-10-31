@@ -198,7 +198,6 @@
 			children = (
 				128876F2290E487A00E22915 /* App */,
 				1288771C290E5E0E00E22915 /* Data */,
-				1288773B290E688D00E22915 /* DI */,
 				12887741290EA36D00E22915 /* Domain */,
 				128876F4290E49B200E22915 /* UI */,
 			);
@@ -208,6 +207,7 @@
 		128876F2290E487A00E22915 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				1288773B290E688D00E22915 /* DI */,
 				128876B7290E1ACA00E22915 /* AppDelegate.swift */,
 			);
 			path = App;
