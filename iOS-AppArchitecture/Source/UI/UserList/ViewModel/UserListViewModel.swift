@@ -1,74 +1,84 @@
 import Foundation
 import CommonCore
 import Combine
-import Network
+import HttpClient
 
-class UserListViewModel: ViewModel{
+class UserListViewModel: ViewModel<UserListUIState, UserListEvent, UserListSideEffect>{
     
     // MARK: - Properties
-    var uiState: AnyPublisher<UserListUIState, Never>{
-        get{
-            return _uiState.eraseToAnyPublisher()
-        }
-    }
-    var sideEffect: AnyPublisher<Void, Never>{
-        get{
-            return _sideEffect.eraseToAnyPublisher()
-        }
-    }
-    
-    private let _uiState: CurrentValueSubject<UserListUIState, Never> = CurrentValueSubject(.Loading)
-    private let _sideEffect: PassthroughSubject<Void, Never> = PassthroughSubject()
     private let getUserListUseCase: GetUserListUseCase
     private let userListUIMapper: UserListUIMapper
-    private let mainQueue: DispatchQueue
-    private var cancellables: Set<AnyCancellable> = []
     
-    // MARK: Initialization
-    init(
-        mainQueue: DispatchQueue,
+    private var uiData: [UserListUIModel]?{
+        get{
+            switch(_uiState.value){
+            case .Data(users: let users):
+                return users
+            default:
+                return nil
+            }
+        }
+        set{
+            if let newValue{
+                _uiState.send(.Data(users: newValue))
+            }
+        }
+    }
+    
+    // MARK: Initialisation
+    nonisolated init(
         getUserListUseCase: GetUserListUseCase,
         userListUIMapper: UserListUIMapper
     ){
-        self.mainQueue = mainQueue
         self.getUserListUseCase = getUserListUseCase
         self.userListUIMapper = userListUIMapper
         
-        loadUsers()
+        super.init(initialState: .Loading)
     }
     
-    // MARK: LoadUsers
-    private func loadUsers(){
-        _uiState.send(.Loading)
-        
-        getUserListUseCase.execute(input: ())
-            .flatMap { response in
-                self.userListUIMapper.map(input: response.data)
-                    .setFailureType(to: HttpError.self)
+    // MARK: Load Initial Data
+    func loadInitialData(){
+        Task{
+            do{
+                _uiState.send(.Loading)
+                let response = try await loadUsers()
+                await loadUsersSuccess(response: response)
+            }catch{
+                loadUsersFailure(error: error)
             }
-            .receive(on: mainQueue)
-            .sink { completion in
-                switch(completion){
-                case .failure(let error):
-                    self.loadUsersFailure(error: error)
-                default: break
-                }
-            } receiveValue: { userUIModels in
-                self.loadUsersSuccess(userUIModels: userUIModels)
-            }.store(in: &cancellables)
+        }
     }
     
-    private func loadUsersSuccess(userUIModels:[UserUIModel]){
+    private func loadUsers() async throws -> UserListResponse{
+        let param = GetUserListUseCase.Param(page: 1)
+        let response = try await getUserListUseCase.execute(param: param)
+        
+        return response
+    }
+    
+    private func loadUsersSuccess(response: UserListResponse) async{
+        let userUIModels = await userListUIMapper.map(input: response.data)
         _uiState.send(.Data(users: userUIModels))
     }
     
-    private func loadUsersFailure(error: HttpError){
+    private func loadUsersFailure(error: Error){
         _uiState.send(.Error)
     }
     
     // MARK: - Handle Event
-    func handleEvent(event: Void) {
-        
+    override func handleEvent(event: UserListEvent) {
+        switch(event){
+        case .itemClicked(index: let index):
+            onItemClicked(index: index)
+        }
+    }
+    
+    private func onItemClicked(index: Int){
+        if let users = uiData{
+            let clickedUser = users[index]
+            
+            _sideEffect.send(.navigateToUserDetailScreen(user: clickedUser))
+        }
     }
     
 }

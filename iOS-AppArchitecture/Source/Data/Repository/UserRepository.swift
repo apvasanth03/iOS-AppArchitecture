@@ -1,15 +1,14 @@
 import Foundation
 import CommonCore
-import Combine
-import Network
+import HttpClient
 
-class UserRepository: Repository{
+actor UserRepository: Repository{
     
-    // MARK: - Variable Decleration
+    // MARK: - Variable Declaration
     private let localDataSource: UserLocalDataSource
     private let remoteDataSource: UserRemoteDataSource
     
-    // MARK: - Initializer
+    // MARK: - Initialiser
     init(
         userLocalDataSource: UserLocalDataSource,
         userRemoteDataSource: UserRemoteDataSource
@@ -19,12 +18,13 @@ class UserRepository: Repository{
     }
     
     // MARK: - Repository Methods
-    func clearStore() -> AnyPublisher<Void, Never> {
-        return localDataSource.clearStore()
+    func clearStore() async {
+        await localDataSource.clearStore()
     }
     
     // MARK: - Public APIs
-    func getUsers() -> AnyPublisher<UserListResponse, HttpError>{
-        return remoteDataSource.getUsers()
+    func getUsers(page: Int) async throws -> UserListResponse{
+        let response = try await remoteDataSource.getUsers(page: page)
+        return response
     }
 }

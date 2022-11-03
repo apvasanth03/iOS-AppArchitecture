@@ -9,24 +9,26 @@
 /* Begin PBXBuildFile section */
 		128876E4290E329B00E22915 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128876E1290E329B00E22915 /* HttpError.swift */; };
 		128876E5290E329B00E22915 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128876E2290E329B00E22915 /* HttpClient.swift */; };
-		128876E9290E3DA400E22915 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128876E8290E3DA400E22915 /* NetworkAssembly.swift */; };
+		128876E9290E3DA400E22915 /* HttpClientAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128876E8290E3DA400E22915 /* HttpClientAssembly.swift */; };
 		128876F9290E4AE300E22915 /* HttpModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128876F8290E4AE300E22915 /* HttpModule.swift */; };
 		128876FC290E4B0B00E22915 /* AlamofireHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128876FB290E4B0B00E22915 /* AlamofireHttpClient.swift */; };
 		12887738290E665500E22915 /* CommonCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12887737290E665500E22915 /* CommonCore.framework */; };
-		33AD902DD8BFDD57B5377A43 /* Pods_Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3512D7776C6EF2A57EB957EA /* Pods_Network.framework */; };
+		5FE12357B30E1A57CB4F49DE /* Pods_HttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BD7A175EED7277A6D6FE2D /* Pods_HttpClient.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		128876D5290E29D700E22915 /* Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		128876D5290E29D700E22915 /* HttpClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HttpClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		128876E1290E329B00E22915 /* HttpError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		128876E2290E329B00E22915 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
-		128876E8290E3DA400E22915 /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
+		128876E8290E3DA400E22915 /* HttpClientAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClientAssembly.swift; sourceTree = "<group>"; };
 		128876F8290E4AE300E22915 /* HttpModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpModule.swift; sourceTree = "<group>"; };
 		128876FB290E4B0B00E22915 /* AlamofireHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireHttpClient.swift; sourceTree = "<group>"; };
 		12887737290E665500E22915 /* CommonCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3512D7776C6EF2A57EB957EA /* Pods_Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32A9B22DFDF305C47F1DDECC /* Pods-HttpClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HttpClient.release.xcconfig"; path = "Target Support Files/Pods-HttpClient/Pods-HttpClient.release.xcconfig"; sourceTree = "<group>"; };
+		69BD7A175EED7277A6D6FE2D /* Pods_HttpClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HttpClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C59F769BB6BE534024E3D3D /* Pods-Network.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.debug.xcconfig"; path = "Target Support Files/Pods-Network/Pods-Network.debug.xcconfig"; sourceTree = "<group>"; };
 		A9C7166D3010B91A5142BB86 /* Pods-Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.release.xcconfig"; path = "Target Support Files/Pods-Network/Pods-Network.release.xcconfig"; sourceTree = "<group>"; };
+		EAC0AB2C435014DCFE43E3EB /* Pods-HttpClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HttpClient.debug.xcconfig"; path = "Target Support Files/Pods-HttpClient/Pods-HttpClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +37,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12887738290E665500E22915 /* CommonCore.framework in Frameworks */,
-				33AD902DD8BFDD57B5377A43 /* Pods_Network.framework in Frameworks */,
+				5FE12357B30E1A57CB4F49DE /* Pods_HttpClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +47,7 @@
 		128876CB290E29D700E22915 = {
 			isa = PBXGroup;
 			children = (
-				128876D7290E29D700E22915 /* Network */,
+				128876D7290E29D700E22915 /* HttpClient */,
 				128876D6290E29D700E22915 /* Products */,
 				DF298F7726BCD24CA1AE45E4 /* Pods */,
 				34E85EE05D9BC96BFFA0710B /* Frameworks */,
@@ -55,17 +57,17 @@
 		128876D6290E29D700E22915 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				128876D5290E29D700E22915 /* Network.framework */,
+				128876D5290E29D700E22915 /* HttpClient.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		128876D7290E29D700E22915 /* Network */ = {
+		128876D7290E29D700E22915 /* HttpClient */ = {
 			isa = PBXGroup;
 			children = (
 				128876DF290E2AA300E22915 /* Source */,
 			);
-			path = Network;
+			path = HttpClient;
 			sourceTree = "<group>";
 		};
 		128876DF290E2AA300E22915 /* Source */ = {
@@ -91,7 +93,7 @@
 		128876E7290E3D9400E22915 /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				128876E8290E3DA400E22915 /* NetworkAssembly.swift */,
+				128876E8290E3DA400E22915 /* HttpClientAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -116,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				12887737290E665500E22915 /* CommonCore.framework */,
-				3512D7776C6EF2A57EB957EA /* Pods_Network.framework */,
+				69BD7A175EED7277A6D6FE2D /* Pods_HttpClient.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,6 +128,8 @@
 			children = (
 				7C59F769BB6BE534024E3D3D /* Pods-Network.debug.xcconfig */,
 				A9C7166D3010B91A5142BB86 /* Pods-Network.release.xcconfig */,
+				EAC0AB2C435014DCFE43E3EB /* Pods-HttpClient.debug.xcconfig */,
+				32A9B22DFDF305C47F1DDECC /* Pods-HttpClient.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../../Pods;
@@ -144,9 +148,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		128876D4290E29D700E22915 /* Network */ = {
+		128876D4290E29D700E22915 /* HttpClient */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 128876DC290E29D700E22915 /* Build configuration list for PBXNativeTarget "Network" */;
+			buildConfigurationList = 128876DC290E29D700E22915 /* Build configuration list for PBXNativeTarget "HttpClient" */;
 			buildPhases = (
 				A35687D8097E9D450855B301 /* [CP] Check Pods Manifest.lock */,
 				128876D0290E29D700E22915 /* Headers */,
@@ -158,9 +162,9 @@
 			);
 			dependencies = (
 			);
-			name = Network;
+			name = HttpClient;
 			productName = Network;
-			productReference = 128876D5290E29D700E22915 /* Network.framework */;
+			productReference = 128876D5290E29D700E22915 /* HttpClient.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -178,7 +182,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 128876CF290E29D700E22915 /* Build configuration list for PBXProject "Network" */;
+			buildConfigurationList = 128876CF290E29D700E22915 /* Build configuration list for PBXProject "HttpClient" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -191,7 +195,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				128876D4290E29D700E22915 /* Network */,
+				128876D4290E29D700E22915 /* HttpClient */,
 			);
 		};
 /* End PBXProject section */
@@ -222,7 +226,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Network-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HttpClient-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -239,7 +243,7 @@
 				128876E5290E329B00E22915 /* HttpClient.swift in Sources */,
 				128876F9290E4AE300E22915 /* HttpModule.swift in Sources */,
 				128876E4290E329B00E22915 /* HttpError.swift in Sources */,
-				128876E9290E3DA400E22915 /* NetworkAssembly.swift in Sources */,
+				128876E9290E3DA400E22915 /* HttpClientAssembly.swift in Sources */,
 				128876FC290E4B0B00E22915 /* AlamofireHttpClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,7 +373,7 @@
 		};
 		128876DD290E29D700E22915 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C59F769BB6BE534024E3D3D /* Pods-Network.debug.xcconfig */;
+			baseConfigurationReference = EAC0AB2C435014DCFE43E3EB /* Pods-HttpClient.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -401,7 +405,7 @@
 		};
 		128876DE290E29D700E22915 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9C7166D3010B91A5142BB86 /* Pods-Network.release.xcconfig */;
+			baseConfigurationReference = 32A9B22DFDF305C47F1DDECC /* Pods-HttpClient.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -433,7 +437,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		128876CF290E29D700E22915 /* Build configuration list for PBXProject "Network" */ = {
+		128876CF290E29D700E22915 /* Build configuration list for PBXProject "HttpClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				128876DA290E29D700E22915 /* Debug */,
@@ -442,7 +446,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		128876DC290E29D700E22915 /* Build configuration list for PBXNativeTarget "Network" */ = {
+		128876DC290E29D700E22915 /* Build configuration list for PBXNativeTarget "HttpClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				128876DD290E29D700E22915 /* Debug */,

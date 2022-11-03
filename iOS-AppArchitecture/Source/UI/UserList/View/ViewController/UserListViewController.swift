@@ -18,7 +18,7 @@ class UserListViewController: UIViewController {
     
     fileprivate var viewModel: UserListViewModel!
     fileprivate var cancellables: Set<AnyCancellable> = []
-    fileprivate var users: [UserUIModel] = []
+    fileprivate var users: [UserListUIModel] = []
     
     // MARK: - UIViewController Methods.
     override func viewDidLoad() {
@@ -27,6 +27,7 @@ class UserListViewController: UIViewController {
         initializeDependencies()
         initializeViews()
         setUpViewModelBindings()
+        loadInitialData()
     }
     
     // MARK: - Private Methods.
@@ -56,6 +57,7 @@ class UserListViewController: UIViewController {
         tvUser.estimatedRowHeight = 100
         tvUser.rowHeight = UITableView.automaticDimension
         tvUser.dataSource = self
+        tvUser.delegate = self
     }
     
     private func initializeErrorView(){
@@ -63,17 +65,28 @@ class UserListViewController: UIViewController {
         vError.title = "Unexpected Error"
         vError.message = "Something went wrong. Please try again later"
     }
+    
+    private func loadInitialData(){
+        viewModel.loadInitialData()
+    }
 }
 
 // MARK: - ViewModel Bindings Extension
 extension UserListViewController{
     
     fileprivate func setUpViewModelBindings(){
-        viewModel.uiState.sink { uiState in
-            self.renderUIState(uiState: uiState)
-        }.store(in: &cancellables)
+        viewModel.uiState
+            .sink { uiState in
+                self.renderUIState(uiState: uiState)
+            }.store(in: &cancellables)
+        
+        viewModel.sideEffect
+            .sink { sideEffect in
+                self.handleSideEffect(sideEffect: sideEffect)
+            }.store(in: &cancellables)
     }
     
+    // MARK: - Render UIState
     private func renderUIState(uiState: UserListUIState){
         switch(uiState){
         case .Loading:
@@ -93,7 +106,7 @@ extension UserListViewController{
         vError.isHidden = true
     }
     
-    private func renderDataState(data: [UserUIModel]){
+    private func renderDataState(data: [UserListUIModel]){
         aiProgress.stopAnimating()
         
         tvUser.isHidden = false
@@ -109,6 +122,18 @@ extension UserListViewController{
         tvUser.isHidden = true
         
         vError.isHidden = false
+    }
+    
+    // MARK: - Handle SideEffect
+    private func handleSideEffect(sideEffect: UserListSideEffect){
+        switch(sideEffect){
+        case .navigateToUserDetailScreen(user: let user):
+            navigateToUserDetailScreen(user)
+        }
+    }
+    
+    private func navigateToUserDetailScreen(_: UserListUIModel){
+        // Yet to implement.
     }
 }
 
@@ -130,8 +155,14 @@ extension UserListViewController: UITableViewDataSource{
         
         return userCell
     }
+}
+
+// MARK: - UITableViewDataSource
+extension UserListViewController: UITableViewDelegate{
     
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let event = UserListEvent.itemClicked(index: indexPath.row)
+        viewModel.handleEvent(event: event)
+    }
 }
 

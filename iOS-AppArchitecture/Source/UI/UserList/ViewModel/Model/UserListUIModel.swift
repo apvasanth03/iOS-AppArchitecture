@@ -1,6 +1,6 @@
 import Foundation
 
-struct UserUIModel {
+struct UserListUIModel {
     let id: Int
     let name: String
     let email: String

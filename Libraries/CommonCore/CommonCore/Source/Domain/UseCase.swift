@@ -1,33 +1,36 @@
 import Foundation
-import Combine
 
-/// UseCase - Executes business logic asynchronously.
+/// UseCase - Used to executes business logic asynchronously.
+/// Use `struct` for `UseCase` implementation
 public protocol UseCase{
     
-    associatedtype Input
-    associatedtype Success
-    associatedtype Failure: Error
+    associatedtype PARAM
+    associatedtype RESULT
     
-    var globalQueue: DispatchQueue { get }
-    
-    /// Executes the use case asynchronously and returns a `Result`
+    /// Execute - The use case asynchronously and returns a `Result`
     ///
     /// - Parameters:
-    ///     - input - Input for the `UseCase`
+    ///     - param - Parameter for the `UseCase`
     ///
-    /// - Returns: The `Publisher`
+    /// - Throws: `Error` on Failure
     ///
-    func execute(input: Input) -> AnyPublisher<Success, Failure>
+    /// - Returns: The `RESULT` on Success.
+    ///
+    func execute(param: PARAM) async throws -> RESULT
+    
+    /// Implement this method in our concrete `UseCase` Type.
+    /// This Method shouldn't be called by the caller - Caller should only use `execute(param:)` version
+    func _execute(param: PARAM) async throws -> RESULT
     
 }
 
 extension UseCase{
     
-    public func executeUseCaseInBackground(block: () -> AnyPublisher<Success, Failure>) -> AnyPublisher<Success, Failure>{
-        return block()
-            .subscribe(on: globalQueue)
-            .eraseToAnyPublisher()
+    /// Provides the default implementation for the `execute(param:)` - By providing Structured Concurrency.
+    public func execute(param: PARAM) async throws -> RESULT{
+        try Task.checkCancellation()
         
+        async let result = _execute(param: param)
+        return (try await result)
     }
-    
 }

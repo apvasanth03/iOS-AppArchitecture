@@ -1,24 +1,24 @@
 import Foundation
 import CommonCore
-import Network
-import Combine
+import HttpClient
 
-class UserRemoteDataSource: RemoteDataSource{
+actor UserRemoteDataSource: RemoteDataSource{
     
-    // MARK: - Variable Decleration
+    // MARK: - Variable Declaration
     let httpClient: HttpClient
     
-    // MARK: - Initializer
+    // MARK: - Initialiser
     init(httpClient: HttpClient){
         self.httpClient = httpClient
     }
     
     // MARK: - Public APIs
-    func getUsers() -> AnyPublisher<UserListResponse, HttpError>{
-        let url = URL(string: "https://reqres.in/api/users?page=1")!
-        let urlRequest = URLRequest(url: url)
+    func getUsers(page: Int) async throws -> UserListResponse{
+        let url = URL(string: "https://reqres.in/api/users?page=\(page)")!
+        let request = URLRequest(url: url)
         
-        return httpClient.makeRequestPublisher(request: urlRequest)
+        let response: UserListResponse = try await httpClient.makeRequest(request: request)
+        return response
     }
     
     

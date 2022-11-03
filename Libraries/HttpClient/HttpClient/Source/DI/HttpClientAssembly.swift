@@ -3,7 +3,7 @@ import Swinject
 import Alamofire
 
 /// A Assembly - registers all Network module dependencies.
-public class NetworkAssembly: Assembly{
+public class HttpClientAssembly: Assembly{
     
     public init(){
         
