@@ -26,8 +26,8 @@ end
 # Libraries
 
 # Network
-target 'Network' do
-  project 'Libraries/Network/Network.xcodeproj'
+target 'HttpClient' do
+  project 'Libraries/HttpClient/HttpClient.xcodeproj'
   
   alamofire
   swinject

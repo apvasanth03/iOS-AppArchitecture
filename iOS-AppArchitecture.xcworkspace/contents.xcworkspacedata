@@ -11,7 +11,7 @@
          location = "group:Libraries/CommonCore/CommonCore.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:Libraries/Network/Network.xcodeproj">
+         location = "group:Libraries/HttpClient/HttpClient.xcodeproj">
       </FileRef>
    </Group>
    <FileRef

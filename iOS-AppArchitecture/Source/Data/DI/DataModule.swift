@@ -1,7 +1,7 @@
 import Foundation
 import CommonCore
 import Swinject
-import Network
+import HttpClient
 
 struct DataModule: Module{
     

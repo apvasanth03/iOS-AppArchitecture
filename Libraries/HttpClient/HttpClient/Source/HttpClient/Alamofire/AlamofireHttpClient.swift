@@ -1,6 +1,5 @@
 import Foundation
 import Alamofire
-import Combine
 
 /// AlamofireHttpClient - `HttpClient` implementation using `Alamofire`
 class AlamofireHttpClient: HttpClient{
@@ -13,15 +12,21 @@ class AlamofireHttpClient: HttpClient{
         self.decoder = decoder
     }
     
-    // MARK: HttpClient Methods
-    func makeRequest<T>(request: URLRequest,  completionHandler: @escaping (Result<T, HttpError>) -> Void) where T : Decodable {
-        session.request(request)
+    // MARK: HttpClient Methods    
+    func makeRequest<T>(request: URLRequest) async throws -> T where T : Decodable {
+        let dataTask = session.request(request)
             .validate()
-            .responseDecodable(of: T.self, decoder: decoder) { dataResponse in
-                let updatedDataResponse = self.transformError(dataResponse: dataResponse)
-                completionHandler(updatedDataResponse.result)
-            }
+            .serializingDecodable(
+                T.self,
+                automaticallyCancelling: true,
+                decoder: decoder
+            )
+        let dataResponse = await dataTask.response
+        let updatedDataResponse = transformError(dataResponse: dataResponse)
+        return try updatedDataResponse.result.get()
     }
+    
+    
     
     // MARK: Helper Methods
     private func transformError<T: Decodable>(dataResponse: DataResponse<T, AFError>) -> DataResponse<T, HttpError>{

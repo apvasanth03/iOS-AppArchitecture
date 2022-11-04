@@ -1,16 +1,15 @@
 import Foundation
 import CommonCore
-import Combine
 
-class UserLocalDataSource: LocalDataSource{
+actor UserLocalDataSource: LocalDataSource{
     
-    // MARK: - Initializer
+    // MARK: - Initialiser
     init(){
         
     }
     
     // MARK: - LocalDataSource Methods
-    func clearStore() -> AnyPublisher<Void, Never>{
-        return Empty().eraseToAnyPublisher()
+    func clearStore() async {
+        
     }
 }

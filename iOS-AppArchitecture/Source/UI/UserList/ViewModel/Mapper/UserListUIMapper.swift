@@ -2,32 +2,19 @@ import Foundation
 import CommonCore
 import Combine
 
-struct UserListUIMapper: Mappper{
+struct UserListUIMapper: Mapper{
     
-    typealias Input = [User]
-    typealias Output = [UserUIModel]
-    
-    let globalQueue: DispatchQueue
-    
-    init(globalQueue: DispatchQueue){
-        self.globalQueue = globalQueue
-    }
-    
-    func map(input: [User]) -> AnyPublisher<[UserUIModel], Never>{
-        return executeMapInBackground {
-            mapToUI(users: input)
-        }
-    }
-    
-    private func mapToUI(users: [User]) -> [UserUIModel]{
-        let userUIModels = users.map { user in
+    // MARK: - Mapper Methods
+    func _map(input: [User]) async -> [UserListUIModel] {
+        let userUIModels = input.map { user in
             mapUser(user: user)
         }
         return userUIModels
     }
     
-    private func mapUser(user: User) -> UserUIModel{
-        let userUIModel = UserUIModel(
+    // MARK: - Private Methods
+    private func mapUser(user: User) -> UserListUIModel{
+        let userUIModel = UserListUIModel(
             id: user.id,
             name: "\(user.firstName) \(user.lastName)",
             email: user.email,

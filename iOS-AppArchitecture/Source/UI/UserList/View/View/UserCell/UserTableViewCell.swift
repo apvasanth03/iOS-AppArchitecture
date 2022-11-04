@@ -23,7 +23,7 @@ class UserTableViewCell: UITableViewCell {
     }
     
     // MARK: - Public Methods.
-    func populateCell(user: UserUIModel){
+    func populateCell(user: UserListUIModel){
         lName.text = user.name
         lEmail.text = user.email
     }

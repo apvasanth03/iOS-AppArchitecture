@@ -1,8 +1,8 @@
 import Foundation
-import Combine
 
 /// Repository - Base `Protocol` for all `Repositories`
+/// Use `actor` for `Protocol` implementation
 public protocol Repository{
     
-    func clearStore() -> AnyPublisher<Void, Never>
+    func clearStore() async
 }
