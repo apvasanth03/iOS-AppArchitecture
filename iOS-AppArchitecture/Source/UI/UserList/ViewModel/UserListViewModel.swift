@@ -19,7 +19,7 @@ class UserListViewModel: ViewModel<UserListUIState, UserListEvent, UserListSideE
             }
         }
         set{
-            if let newValue{
+            if let newValue = newValue {
                 _uiState.send(.Data(users: newValue))
             }
         }
